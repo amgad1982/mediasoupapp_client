@@ -5,19 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mediasoup Video App</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
 </head>
 <body>
+    <script src="app-bundle.js"></script>
+    <div style="display: inline-block; padding-top: 0; width: 500px;">
+        <div>
    <video id="localVideo" controls auoplay playsinline></video>
-   <button id="btn_webcam">Camera Publish</button>
-   <button id="btn_screen">Desktop Publish</button>
-   <button id="btn_subscribe">subscribe</button>
-
-   <input type="text" id="webcam_status"/>
+</div>
+<div>
+    <div style="display:flex">
+    <input type="text" id="webcam_status"/>
+   <button id="btn_webcam" disabled>Camera Publish</button>
+</div>
+<div>
    <input type="text" id="screen_status"/>
+   <button id="btn_screen" disabled>Desktop Publish</button>
+</div>
+<div>
    <input type="text" id="subscribe_status"/>
+   <button id="btn_subscribe">subscribe</button>
+</div>
+</div>
+<div>
+<video id="remoteVideo" controls auoplay playsinline></video>
+</div>
+</div>
+   
+   
+   
 
 
-   <video id="remoteVideo" controls auoplay playsinline></video>
+   
+   
 </body>
 </html>
