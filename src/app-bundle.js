@@ -12228,10 +12228,13 @@ const connect = () => {
             case "producerTransportCreated":
                 onProducerTransportCreated(resp);
                 break;
+            case "producerConnected":
+                socket.dispatchEvent(event);
           default:
             break;
         }
     }
+
 
 
     const onProducerTransportCreated = async (event) => {
@@ -12247,7 +12250,7 @@ const connect = () => {
                 dtlsParameters
             }
             const resp = JSON.stringify(message);
-        socket.send(resp);
+            socket.send(resp);
             socket.addEventListener('producerConnected', (event) => {
                 callback();
             });
